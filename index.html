@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Flashback-Web</title>
+    <style type="text/css">
+		body {
+			display: flex;
+            font-family: sans-serif;
+			justify-content: center;
+			align-items: center;
+			flex-direction:column;
+		}
+
+        .fullscreen {
+            object-fit: contain;
+            position: fixed !important;
+            top: 0px !important;
+            right: 0px !important;
+            bottom: 0px !important;
+            left: 0px !important;
+            box-sizing: border-box !important;
+            min-width: 0px !important;
+            max-width: none !important;
+            min-height: 0px !important;
+            max-height: none !important;
+            width: 100% !important;
+            height: 100% !important;
+            transform: none !important;
+            margin: 0px !important;
+            background-color: black;
+        }
+
+        .main {
+            display: none;
+        }
+
+        .main > div {
+            justify-content: center;
+            padding: 3rem;
+            padding-top: 0;          
+        }
+
+        .visible {
+            display: block;            
+        }
+
+        .intro {
+            padding: 3rem;            
+        }
+
+        small ul {
+            list-style-type: none;
+            text-align: center;
+        }
+    </style>
+    $css
+  </head>
+
+  <body>
+    <h2 style="text-align:center;">Flashback-Web: TypeScript port of Reminiscence</h2>
+    <div class="intro">
+        <p>
+            Flashback-Web is a TypeScript rewrite of the Flashback game, based on the source code of Reminiscence.<br />
+        </p>
+        <p>
+            This project currently only runs the free demo-version of Flashback DOS.<br /><br />
+            For more information and full source-code access, check the project's <a href="https://github.com/warpdesign/flashback-web">GitHub page</a>.
+        </p>
+        <p>
+            If you want to play the full version of Flashback, it can be bought from <a href="https://www.gog.com/game/flashback">GOG</a>.
+        </p>
+        <p>
+            <button id="play">Play</button>
+        </p>
+    </div>
+    <div class="main">
+        <canvas id="root"></canvas>
+        <h4>Demo version of Flashback for DOS (press Tab to skip intro, see below for controls)</h4>
+        <div>
+            <div>
+                <h3>What's working:</h3>
+                <ul>
+                    <li>Gameplay with most opcodes</li>
+                    <li>Cutscenes</li>
+                    <li>Sound + "Sfx" music</li>
+                    <li>Keyboard controls (no touch support yet)</li>
+                </ul>
+    
+                <h4>What's missing:</h4>
+                <ul>
+                    <li>Save games (will be implemented later)</li>
+                    <li>Amiga modules (may come later)</li>
+                    <li>No scaler other than the default CSS-based blurry scaler</li>
+                    <li>Only tested with the DOS demo version (full game should work too)</li>
+                </ul>
+            </div>        
+            <div>
+                <h3>Controls:</h3>            
+                <ul>
+                    <li>Arrow Keys: move Conrad</li>
+                    <li>Enter: use the current inventory object</li>
+                    <li>Shift: talk / use / run / shoot</li>
+                    <li>Escape or o: display the options (ingame)</li>
+                    <li>Backspace or Tab: display the inventory / skip cutscene</li>
+                    <li>F / double-click: toggle fullscreen</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <small>
+        <ul>
+            <li>Source code: <a href="https://github.com/warpdesign/flashback-web">GitHub</a></li>
+            <li>Flashback was developped by Delphine Software in 1992</li>
+            <li>Original Reminiscence source code written by <a href="http://cyxdown.free.fr/reminiscence/">Gregory Montoir</a></li>
+        </ul>
+    </small>
+    $bundles
+  </body>
+</html>

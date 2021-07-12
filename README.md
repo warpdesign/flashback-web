@@ -1,6 +1,8 @@
 # Flashback for modern Web Browsers
 This project is a TypeScript rewrite of [REminiscence](http://cyxdown.free.fr/reminiscence/) which is a reimplementation of the engine of [Flashback](https://en.wikipedia.org/wiki/Flashback_(1992_video_game)), a game released in 1992 for the Commodore-Amiga & DOS.
 
+![Flashback title screen](flashback.png "Flashback title screen")
+
 I converted by hand most of the C++ code to TypeScript.
 
 SDL functions have been mapped to their Canvas/WebAudio equivalent functions.

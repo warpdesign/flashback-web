@@ -1,0 +1,27 @@
+{
+  "name": "flashback-ts",
+  "version": "1.0.0",
+  "description": "REminiscence README Release version: 0.4.6 -------------------------------------------------------------------------------",
+  "main": "src/index.ts",
+  "dependencies": {
+    "fuse-box": "^4.0.0",
+    "ts-node": "^9.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node fuse.ts",
+    "build": "rm -Rf dist && ts-node fuse-prod.ts && mkdir -p dist/js && cp src/audio-processors/processors.js dist/js/",
+    "check": "tsc src/index.ts --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/warpdesign/flashback-js.git"
+  },
+  "author": "Nicolas Ramz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/warpdesign/flashback-js/issues"
+  },
+  "homepage": "https://github.com/warpdesign/flashback-js#readme"
+}
