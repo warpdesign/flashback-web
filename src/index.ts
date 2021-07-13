@@ -176,7 +176,8 @@ const main = async (config = DEFAULT_CONFIG ) => {
 
 	// param 7
 	widescreen = parseWidescreen(config.widescreen)
-
+	const stub = new SystemStub()
+	
 	await initOptions()
 	const fs = new FileSystem()
 	await fs.setRootDirectory(dataPath)
@@ -187,7 +188,6 @@ const main = async (config = DEFAULT_CONFIG ) => {
 		console.log('version', version)
 	}
 	const language = forcedLanguage === -1 ? await detectLanguage(fs) : forcedLanguage
-	const stub = new SystemStub()
 	const g = new Game(stub, fs, savePath, levelNum, version, language, widescreen, autoSave)
 	await stub.init(g_caption, g._vid._w, g._vid._h, fullscreen, widescreen, scalerParameters)
 	await g.run()

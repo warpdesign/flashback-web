@@ -73,6 +73,11 @@ class SystemStub {
 		*4)
 	_kAudioHz: number
 
+	constructor() {
+		this._audioContext = new window.AudioContext()
+		this.resumeAudio()
+	}
+
 	initCanvas(w: number, h: number) {
 		// const canvas = document.createElement('canvas')
 		const canvas:HTMLCanvasElement = document.getElementById('root')
@@ -100,7 +105,6 @@ class SystemStub {
 
 	async initAudio() {
 		try {
-			this._audioContext = new window.AudioContext()
 			this._kAudioHz = this._audioContext.sampleRate
 
 			await this._audioContext.audioWorklet.addModule(`js/processors.js`)			
@@ -291,7 +295,11 @@ class SystemStub {
 	}
 
 	onKbEvent = (e) => {
-		e.preventDefault()		
+		// don't prevent global browser shortcuts like reload,...
+		// to happen
+		if (!e.metaKey && !e.ctrlKey) {
+			e.preventDefault()
+		}
 		this._events.push(e)
 	}
 
